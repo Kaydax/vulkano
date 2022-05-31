@@ -1191,7 +1191,7 @@ impl<'a> PhysicalDevice<'a> {
                         ),
                 )?;
 
-                surface_format2s = Vec::with_capacity(num as usize);
+                surface_format2s = vec![ash::vk::SurfaceFormat2KHR::default(); num as usize];
                 check_errors(
                     fns.khr_get_surface_capabilities2
                         .get_physical_device_surface_formats2_khr(
